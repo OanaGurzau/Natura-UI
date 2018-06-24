@@ -1,0 +1,22 @@
+{
+  "name": "natura",
+  "version": "1.0.0",
+  "description": "Pagini pentru natura",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OanaGurzau/natura.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OanaGurzau/natura/issues"
+  },
+  "homepage": "https://github.com/OanaGurzau/natura#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}
