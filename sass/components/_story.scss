@@ -1,0 +1,40 @@
+.story{
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  background-color: $color-white;
+  border-radius: .3rem;
+  padding:6rem;
+  padding-left:9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);  //skew  all
+
+& > *{
+  transform: skewX(12deg);  // skew all childs back except background
+
+}
+
+
+
+  &__shape{
+    width:15rem;
+    height:15rem;
+    float:left;
+    -webkit-shape-outside:circle(50% at 50% 50%);
+    shape-outside:circle(50% at 50% 50%);   // pt-text - ca sa mearga trebuie ca elementul sa fie floated, sa aiba height, width;
+
+
+    -webkit-clip-path:circle(50% at 50% 50%);
+    clip-path:circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); //-3rem pt spatiu la un element float (cerc) + skewX pt indreptarea imaginii dupa slew-ul parinte
+  }
+
+  &__img{
+    height: 100%;
+  }
+
+  &__text{
+    transform: skewX(12deg);
+  }
+
+}
