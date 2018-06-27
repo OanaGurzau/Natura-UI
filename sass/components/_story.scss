@@ -2,7 +2,7 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, .1);
-  background-color: $color-white;
+  background-color: rgba($color-white, .6);
   border-radius: .3rem;
   padding:6rem;
   padding-left:9rem;
@@ -13,7 +13,7 @@
   transform: skewX(12deg);  // skew all childs back except background
 
 }
- 
+
 
 
   &__shape{
@@ -27,14 +27,42 @@
     -webkit-clip-path:circle(50% at 50% 50%);
     clip-path:circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); //-3rem pt spatiu la un element float (cerc) + skewX pt indreptarea imaginii dupa slew-ul parinte
+    position: relative;
   }
 
   &__img{
     height: 100%;
+    transform:translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
   }
 
   &__text{
     transform: skewX(12deg);
+  }
+
+  &__caption{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, 20%);  //centering position absolute + position relative la parinte (&__shape)
+    color:$color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity:0;
+    transition: all .5s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption{
+    opacity:1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img{
+    transform:translateX(-4rem) scale(1);
+    transition: all .5s;
+    filter:blur(.3rem) brightness(80%);
   }
 
 }
