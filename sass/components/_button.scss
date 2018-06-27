@@ -1,4 +1,5 @@
 .btn{
+  &, //select just <button> element (button does not have link and visited)
   &:link,
   &:visited{
     text-transform: uppercase;
@@ -12,10 +13,15 @@
     animation-duration: 1s;
     font-size: $default-font-size;
 
+    //change for the <button> element
+
+    border: none;
+    cursor: pointer;
 
   }
 
-  &:hover{
+  &:hover
+  {
     transform: translateY(-.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, .2);
     &::after{
@@ -24,7 +30,8 @@
     }
   }
 
-  &:active{
+  &:active, &:focus{
+    outline: none;
     transform:translateY(-.3);
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
   }
