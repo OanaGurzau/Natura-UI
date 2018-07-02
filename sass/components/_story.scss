@@ -9,6 +9,7 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);  //skew  all
 
+
 & > *{
   transform: skewX(12deg);  // skew all childs back except background
 
