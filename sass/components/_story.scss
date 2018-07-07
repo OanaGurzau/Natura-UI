@@ -29,17 +29,22 @@
 
 
   &__shape{
-    width:15rem;
-    height:15rem;
     float:left;
-    -webkit-shape-outside:circle(50% at 50% 50%);
-    shape-outside:circle(50% at 50% 50%);   // pt-text - ca sa mearga trebuie ca elementul sa fie floated, sa aiba height, width;
-
-
-    -webkit-clip-path:circle(50% at 50% 50%);
-    clip-path:circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg); //-3rem pt spatiu la un element float (cerc) + skewX pt indreptarea imaginii dupa slew-ul parinte
     position: relative;
+    overflow: hidden;
+    border-radius: 15%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+      -webkit-clip-path:circle(50% at 50% 50%);
+      clip-path:circle(50% at 50% 50%);
+      width:15rem;
+      height:15rem;
+      -webkit-shape-outside:circle(50% at 50% 50%);
+      shape-outside:circle(50% at 50% 50%);   // pt-text - ca sa mearga trebuie ca elementul sa fie floated, sa aiba height, width;
+      border-radius: none;
+    }
+
 
     @include respond(phone){
       transform: translateX(-3rem) skewX(0);
